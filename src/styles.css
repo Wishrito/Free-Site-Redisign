@@ -1,0 +1,25 @@
+body {
+    background-color: #ffffe1;
+    color: #452252;
+}
+
+.logo1 {
+float: left;
+}
+
+.logo2 {
+float: right;
+}
+
+
+.navbar ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+.title {
+    text-align: center;
+    font-size: px;
+    color:#000999;
+    font-family:"Maiandra GD";
+}
