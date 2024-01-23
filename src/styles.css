@@ -1,25 +1,165 @@
+@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
 body {
-    background-color: #ffffe1;
-    color: #452252;
+    font-family: 'Maiandra GD', sans-serif;
+    background-color: #f0f0f0;
+    color: #000999;
 }
 
-.logo1 {
-float: left;
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.logo2 {
-float: right;
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
 }
 
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
 
-.navbar ul {
-    list-style: none;
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.containerLogo {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.logo1, .logo2 {
+    max-width: 100px;
+    height: auto;
+}
+  
+.title {
+    font-size: 24px;
+    margin-top: 20px;
+}
+  
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    width: fit-content;
+    background-color: #000a99bb;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    & ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    & li {
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        transition: 0.75s;
+        &:hover {
+            background-color: blue;
+            transform: translateX(40px);
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    }
+    & a {
+        height: 20px;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 16px;
+        transition: 0.5s;
+    }
+}
+
+/* Ajout de styles pour déplacer la navbar à gauche */
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: flex-start;
+    & ul {
+        margin-left: 20px;
+    }
+
+    & li {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+    }
+}
+
+a {
     text-decoration: none;
 }
 
-.title {
+footer {
+    height: 150px;
+    list-style: none;
+    margin-top: 30px;
     text-align: center;
-    font-size: px;
-    color:#000999;
-    font-family:"Maiandra GD";
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    & div.footer {
+        color: black;
+        & ul {
+            list-style: none;
+        }
+        & .footer-nav {        
+            color: black;
+        }
+
+        & .footer-right, .footer-left {
+            height: 150px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            float: left;
+            & ul {
+                text-align: center;
+                &li {
+                    margin-bottom: 10px;
+    
+                }
+    
+            }
+        }
+
+        & .social-icons {
+            transition: 0.5s;
+            & a {
+                text-decoration: none;
+                font-size: 24px;
+                margin-right: 10px;
+            }
+            & .fab.fa-instagram {
+                color: #c13584;
+                &:hover {
+                    transform: scale(1.2);
+                    animation: shake 3s ease-in-out infinite;
+                }
+            }
+        }
+    }
 }
+
+@keyframes shake {
+    0%, 100% {
+      transform: rotate(0);
+    }
+    25%, 75% {
+      transform: rotate(-30deg);
+    }
+    50% {
+      transform: rotate(30deg);
+    }
+  }
